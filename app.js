@@ -1,6 +1,20 @@
-var userInp = prompt('Enter a number and find out the factorial')
+let userInp = document.querySelector("#inp");
+let result = document.querySelector("#resultDiv");
+let resultInp = document.querySelector("#inp1");
 
-for(var fact = 1; userInp > 1; userInp--){
-    fact = userInp * fact
+function find(){
+    if(userInp.value == ""){
+        alert('Please Enter a Number.');
+    }
+    else{
+
+        for(var fact = 1; userInp.value > 1; userInp.value--){
+            fact = userInp.value * fact
+            
+        }
+        result.style.display = "block";
+        result.className = "resInp";
+        resultInp.value = fact;
+        userInp.value = "";
+    }
 }
-alert(fact)
